@@ -7,4 +7,5 @@ class VisitorsController < ApplicationController
 		render 'visitors/new'
 	end
 
+
 end
