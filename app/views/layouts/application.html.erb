@@ -1,34 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-
-  	<!-- viewport metatag improves the presentation of web pages on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- search engin catch the key words in title tag-->
     <title><%= content_for?(:title) ? yield(:title) : "Learn Rails" %></title>
-
-    <!-- description -->
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Learn Rails" %>">
-
-    <!-- Ruby link helper to combine and concat CSS files-->
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <!-- Ruby link helper to combine and concat JavaScript files-->
+    <%# Modernizr is required for Zurb Foundation %>
+    <%= javascript_include_tag 'vendor/modernizr' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-
     <main role="main">
-      <%= render 'layouts/messages' %>
-      <%= yield %>
+       <%= render 'layouts/messages' %>
+       <%= yield %>
     </main>
-
   </body>
 </html>
-
-
