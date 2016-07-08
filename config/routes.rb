@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   #the VisitorsController new action
   
   root to: 'visitors#new' 
+
 end
